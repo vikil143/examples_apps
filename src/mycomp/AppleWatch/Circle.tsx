@@ -35,16 +35,6 @@ export default function Circle({ radius, color, progress, index }: Props) {
   });
 
   return (
-    // <View
-    //   style={[
-    //     StyleSheet.absoluteFill,
-    //     {
-    //       backgroundColor: "rgba(255,255,255,0.6)",
-    //       width: radius * 2,
-    //       height: radius * 2,
-    //     },
-    //   ]}
-    // >
     <Animated.View style={[StyleSheet.absoluteFill]}>
       <Animated.View
         style={[
@@ -58,7 +48,6 @@ export default function Circle({ radius, color, progress, index }: Props) {
         ]}
       ></Animated.View>
     </Animated.View>
-    // </View>
   );
 }
 

@@ -1,3 +1,9 @@
+import { ViewStyle as VStyle } from "react-native";
+
+export interface ViewStyle {
+  style?: VStyle
+}
+
 type NavigatonName =
   | "AllScreens"
   | "MonzoCard"
@@ -34,7 +40,12 @@ type NavigatonName =
   | "Darkroom"
   | "Drawer"
   | "SkiaExperiment"
-  | "DoubleScroller";
+  | "DoubleScroller"
+  | "CircularSlider"
+  | "QRCode"
+  | "Ball"
+  | "BBCPlayer"
+  ;
 
 type StackTypes = {
   AllScreens: undefined;
@@ -75,6 +86,10 @@ type StackTypes = {
   Drawer: undefined;
   SkiaExperiment: undefined;
   DoubleScroller: undefined;
+  CircularSlider: undefined;
+  QRCode: undefined;
+  Ball: undefined;
+  BBCPlayer: undefined
 };
 
 interface Modal {
@@ -82,5 +97,8 @@ interface Modal {
   text: string;
   route: NavigatonName;
 }
+
+
+
 
 export { StackTypes, Modal, NavigatonName };

@@ -76,11 +76,6 @@ const dataSimpleAnimation: Modal[] = [
   },
   {
     id: id++,
-    text: "Circular Progress",
-    route: "CircularProgress",
-  },
-  {
-    id: id++,
     text: "Tabbar",
     route: "Tabbar",
   },
@@ -129,6 +124,12 @@ const data: Modal[] = [
     id: id++,
     text: "Clear Todo",
     route: "ClearTodo",
+  },
+
+  {
+    id: id++,
+    text: "Circular Progress",
+    route: "CircularProgress",
   },
   {
     id: id++,
@@ -190,6 +191,26 @@ const data: Modal[] = [
     text: "Double Scroller",
     route: "DoubleScroller",
   },
+  {
+    id: id++,
+    text: "Circular Slider",
+    route: "CircularSlider"
+  },
+  {
+    id: id++,
+    text: "QR Code",
+    route: "QRCode"
+  },
+  {
+    id: id++,
+    text: "Ball",
+    route: "Ball"
+  },
+  {
+    id: id++,
+    text: "BBC Player",
+    route: "BBCPlayer"
+  }
 ];
 
 export { data, dataWP, dataSimpleAnimation, dataSharedElement, dataJamnadas };

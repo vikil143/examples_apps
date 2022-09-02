@@ -1,4 +1,5 @@
 import Animated, {
+  Extrapolate,
   interpolate,
   withRepeat,
   withTiming,
@@ -33,6 +34,12 @@ export const mix = (
   "worklet";
   return interpolate(value.value, [0, 1], [from, to]);
 };
+
+// 
+export const clampInterpolate = (value: Animated.SharedValue<number>, inputRange: number[], outputRange: number[]) => {
+  "worklet";
+  return interpolate(value.value, inputRange, outputRange, Extrapolate.CLAMP)
+}
 
 export const snapPoint = (
   value: number,
@@ -80,5 +87,5 @@ export const toRad = (deg: number) => {
   "worklet";
   return deg * (Math.PI / 180);
 };
-export const translateZ = () => {};
+export const translateZ = () => { };
 // export const translateZ = (perspective: Val, x: Val) => divide(perspective, sub(perspective, x));

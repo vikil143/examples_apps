@@ -37,6 +37,11 @@ import CustomDrawer from "./src/mycomp/CustomDrawer";
 import TapLongPress from "./src/mycomp/TapLongPress";
 import MyLiquidSwipe from "./src/mycomp/MyLiquidSwipe";
 import DoubleScroller from "./src/mycomp/DoubleScroller";
+import CircularSlider from "./src/mycomp/circluar_slider/CircularSlider";
+import QRCode from "./src/mycomp/qrcode/Svg";
+import Ball from "./src/mycomp/ball/Screen";
+import BBCPlayer from "./src/mycomp/bbc_player/Screen";
+
 
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
@@ -136,6 +141,11 @@ export default function App() {
             <Stack.Screen name="ProfileCutter" component={ProfileCutter} />
             <Stack.Screen name="Drawer" component={Drawer} />
             <Stack.Screen name="DoubleScroller" component={DoubleScroller} />
+
+            <Stack.Screen name="CircularSlider" component={CircularSlider} />
+            <Stack.Screen name="QRCode" component={QRCode} />
+            <Stack.Screen name="Ball" component={Ball} />
+            <Stack.Screen name="BBCPlayer" component={BBCPlayer} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>
