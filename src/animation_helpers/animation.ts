@@ -5,6 +5,11 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
+export const rNo = (no: number) => {
+  "worklet";
+  return no - no * 2
+}
+
 export const reverseNumber = (no: Animated.SharedValue<number>) => {
   "worklet";
   return no.value - no.value * 2;

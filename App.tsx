@@ -41,7 +41,10 @@ import CircularSlider from "./src/mycomp/circluar_slider/CircularSlider";
 import QRCode from "./src/mycomp/qrcode/Svg";
 import Ball from "./src/mycomp/ball/Screen";
 import BBCPlayer from "./src/mycomp/bbc_player/Screen";
-
+import WaveAnimation from "./src/mycomp/WaveAnimation";
+import ImageList from "./src/mycomp/ImageList";
+import StickyFooter from "./src/mycomp/stickyFooter";
+import IOSPicker from "./src/mycomp/picker"
 
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
@@ -75,6 +78,7 @@ import FirstExample from "./src/mycomp/shared_elements/first_example";
 import BrainTest from "./src/mycomp/braintest";
 import ProfileCutter from "./src/mycomp/profile_cutter";
 import Darkroom from "./src/season4/darkroom/Darkroom";
+import SkeltonAnim from "./src/mycomp/loading/SkeltonAnim";
 
 const Stack = createStackNavigator<StackTypes>();
 
@@ -104,6 +108,8 @@ export default function App() {
               name="CircularProgress"
               component={CircularProgress}
             />
+            <Stack.Screen name="Loader" component={ArrowLoader} />
+            <Stack.Screen name="Skelton" component={SkeltonAnim} />
             <Stack.Screen name="MaskedExample" component={MaskedExample} />
             <Stack.Screen name="ChromeTab" component={MyChromeTabbar} />
             <Stack.Screen name="CustomDrawer" component={CustomDrawer} />
@@ -146,6 +152,10 @@ export default function App() {
             <Stack.Screen name="QRCode" component={QRCode} />
             <Stack.Screen name="Ball" component={Ball} />
             <Stack.Screen name="BBCPlayer" component={BBCPlayer} />
+            <Stack.Screen name="WaveAnimation" component={WaveAnimation} />
+            <Stack.Screen name="ImageList" component={ImageList} />
+            <Stack.Screen name="StickyFooter" component={StickyFooter} />
+            <Stack.Screen name="IOSPicker" component={IOSPicker} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>

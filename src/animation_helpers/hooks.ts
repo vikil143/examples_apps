@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Animated, { useSharedValue, withTiming, Easing } from "react-native-reanimated";
+import Animated, { useSharedValue, withTiming, Easing, withRepeat, cancelAnimation } from "react-native-reanimated";
 
 // Better name it useAnimatedOnMount
 export const mountTiming = (duration?: number): Animated.SharedValue<number> => {
@@ -11,3 +11,28 @@ export const mountTiming = (duration?: number): Animated.SharedValue<number> => 
 
   return progress;
 };
+
+export const mountLoop = (
+  duration: number = 1000,
+  noOfLoop: number = 5,
+  reverse: boolean = true
+) => {
+  const progress = useSharedValue(0);
+
+  useEffect(() => {
+    progress.value = withRepeat(
+      withTiming(1, { duration }),
+      noOfLoop,
+      reverse
+    );
+
+    return () => {
+      cancelAnimation(progress)
+    }
+  }, []);
+
+
+
+  return progress
+};
+

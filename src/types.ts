@@ -45,7 +45,12 @@ type NavigatonName =
   | "QRCode"
   | "Ball"
   | "BBCPlayer"
-  ;
+  | "WaveAnimation"
+  | "ImageList"
+  | "StickyFooter"
+  | "IOSPicker"
+  | "Loader"
+  | "Skelton";
 
 type StackTypes = {
   AllScreens: undefined;
@@ -89,7 +94,13 @@ type StackTypes = {
   CircularSlider: undefined;
   QRCode: undefined;
   Ball: undefined;
-  BBCPlayer: undefined
+  BBCPlayer: undefined;
+  WaveAnimation: undefined;
+  ImageList: undefined;
+  StickyFooter: undefined;
+  IOSPicker: undefined;
+  Loader: undefined;
+  Skelton: undefined;
 };
 
 interface Modal {

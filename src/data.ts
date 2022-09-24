@@ -210,6 +210,41 @@ const data: Modal[] = [
     id: id++,
     text: "BBC Player",
     route: "BBCPlayer"
+  },
+  {
+    id: id++,
+    text: "Wave Animation",
+    route: "WaveAnimation"
+  },
+  {
+    id: id++,
+    text: "Wave Animation",
+    route: "WaveAnimation"
+  },
+  {
+    id: id++,
+    text: "Image List",
+    route: "ImageList"
+  },
+  {
+    id: id++,
+    text: "Sticky Footer",
+    route: "StickyFooter"
+  },
+  {
+    id: id++,
+    text: "IOS Picker",
+    route: "IOSPicker"
+  },
+  {
+    id: id++,
+    text: "Loader",
+    route: "Loader"
+  },
+  {
+    id: id++,
+    text: "Skelton",
+    route: "Skelton"
   }
 ];
 
