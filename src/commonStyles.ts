@@ -10,6 +10,9 @@ const commonStyles = StyleSheet.create({
     center: {
         justifyContent: "center",
         alignItems: "center"
+    },
+    row: {
+        flexDirection: "row"
     }
 });
 

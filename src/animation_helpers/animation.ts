@@ -5,6 +5,11 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
+
+const diff = (no: Animated.SharedValue<number>) => {
+  return
+}
+
 export const rNo = (no: number) => {
   "worklet";
   return no - no * 2

@@ -45,6 +45,8 @@ import WaveAnimation from "./src/mycomp/WaveAnimation";
 import ImageList from "./src/mycomp/ImageList";
 import StickyFooter from "./src/mycomp/stickyFooter";
 import IOSPicker from "./src/mycomp/picker"
+import Parallax from "./src/mycomp/Parallax/Parallax";
+import WalletAnimation from "./src/mycomp/wallet_animation/WalletAnimation";
 
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
@@ -156,6 +158,8 @@ export default function App() {
             <Stack.Screen name="ImageList" component={ImageList} />
             <Stack.Screen name="StickyFooter" component={StickyFooter} />
             <Stack.Screen name="IOSPicker" component={IOSPicker} />
+            <Stack.Screen name="Parallax" component={Parallax} />
+            <Stack.Screen name="WalletAnimation" component={WalletAnimation} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>

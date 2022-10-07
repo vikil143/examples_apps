@@ -245,6 +245,16 @@ const data: Modal[] = [
     id: id++,
     text: "Skelton",
     route: "Skelton"
+  },
+  {
+    id: id++,
+    text: "Parallax",
+    route: "Parallax"
+  },
+  {
+    id: id++,
+    text: "Wallet Animation",
+    route: "WalletAnimation"
   }
 ];
 

@@ -50,7 +50,9 @@ type NavigatonName =
   | "StickyFooter"
   | "IOSPicker"
   | "Loader"
-  | "Skelton";
+  | "Skelton"
+  | "Parallax"
+  | "WalletAnimation";
 
 type StackTypes = {
   AllScreens: undefined;
@@ -101,6 +103,8 @@ type StackTypes = {
   IOSPicker: undefined;
   Loader: undefined;
   Skelton: undefined;
+  Parallax: undefined;
+  WalletAnimation: undefined
 };
 
 interface Modal {
