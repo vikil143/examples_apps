@@ -255,6 +255,11 @@ const data: Modal[] = [
     id: id++,
     text: "Wallet Animation",
     route: "WalletAnimation"
+  },
+  {
+    id: id++,
+    text: "Naukri App",
+    route: "Naukri",
   }
 ];
 

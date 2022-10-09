@@ -28,7 +28,11 @@ export default () => {
     return (
         <SafeAreaView>
             <StatusBar hidden />
-            <Animated.ScrollView onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], { useNativeDriver: true })}>
+            <Animated.ScrollView onScroll={Animated.event([{
+                nativeEvent: {
+                    contentOffset: { y: scrollY }
+                }
+            }], { useNativeDriver: true })}>
                 <Text style={[styles.heading]}>Heading</Text>
                 {articleParagraphs.map((item, index) => {
 

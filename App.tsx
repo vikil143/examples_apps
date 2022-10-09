@@ -47,6 +47,8 @@ import StickyFooter from "./src/mycomp/stickyFooter";
 import IOSPicker from "./src/mycomp/picker"
 import Parallax from "./src/mycomp/Parallax/Parallax";
 import WalletAnimation from "./src/mycomp/wallet_animation/WalletAnimation";
+import Naukri from "./src/mycomp/naukri/Screen";
+
 
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
@@ -160,6 +162,7 @@ export default function App() {
             <Stack.Screen name="IOSPicker" component={IOSPicker} />
             <Stack.Screen name="Parallax" component={Parallax} />
             <Stack.Screen name="WalletAnimation" component={WalletAnimation} />
+            <Stack.Screen name="Naukri" component={Naukri} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>

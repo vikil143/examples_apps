@@ -52,7 +52,8 @@ type NavigatonName =
   | "Loader"
   | "Skelton"
   | "Parallax"
-  | "WalletAnimation";
+  | "WalletAnimation"
+  | "Naukri";
 
 type StackTypes = {
   AllScreens: undefined;
@@ -105,6 +106,7 @@ type StackTypes = {
   Skelton: undefined;
   Parallax: undefined;
   WalletAnimation: undefined
+  Naukri: undefined;
 };
 
 interface Modal {
