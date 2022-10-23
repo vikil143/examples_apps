@@ -1,10 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, Dimensions } from "react-native";
-import { PanGestureHandler } from "react-native-gesture-handler";
+import { PanGestureHandler, PanGestureHandlerGestureEvent } from "react-native-gesture-handler";
 import Animated, {
   useAnimatedGestureHandler,
   useSharedValue,
 } from "react-native-reanimated";
+import { clamp } from "../../animation_helpers/animation";
+import { SCREEN_HEIGHT } from "../../constants";
 import Card from "./Card";
 
 const cardHeight = 250;
@@ -54,12 +56,14 @@ export default () => {
   // One transformation value y
   const y = useSharedValue(0);
 
-  const onPangesture = useAnimatedGestureHandler({
-    onStart: () => {},
-    onActive: ({ translationY }) => {
-      console.log("translationY", translationY);
+  const onPangesture = useAnimatedGestureHandler<PanGestureHandlerGestureEvent, { y: number }>({
+    onStart: (_, ctx) => {
+      ctx.y = y.value
     },
-    onEnd: () => {},
+    onActive: ({ translationY }, ctx) => {
+      y.value = clamp(translationY + ctx.y, -cardHeight * cards.length + SCREEN_HEIGHT, 0)
+    },
+    onEnd: () => { },
   });
 
   return (

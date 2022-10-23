@@ -46,7 +46,7 @@ import ImageList from "./src/mycomp/ImageList";
 import StickyFooter from "./src/mycomp/stickyFooter";
 import IOSPicker from "./src/mycomp/picker"
 import Parallax from "./src/mycomp/Parallax/Parallax";
-import WalletAnimation from "./src/mycomp/wallet_animation/WalletAnimation";
+import WalletAnimation from "./src/mycomp/wallet_animation";
 import Naukri from "./src/mycomp/naukri/Screen";
 
 

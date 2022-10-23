@@ -1,10 +1,11 @@
 import { Dimensions, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useDerivedValue, useSharedValue, withSpring, interpolateColor } from 'react-native-reanimated';
+import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useDerivedValue, useSharedValue, withSpring, interpolateColor, withTiming } from 'react-native-reanimated';
 import { PanGestureHandler } from "react-native-gesture-handler"
 // import { clamp, polar2Cartesian } from '../../animatedHelper';
 import { clamp, } from '../../animation_helpers/animation';
-import { canvas2Polar, polar2Cartesian } from "../../coordinates"
+// import { canvas2Polar, polar2Cartesian } from "../../coordinates";
+import { canvas2Polar, polar2Canvas } from "react-native-redash"
 
 
 const SCROLL_MARGIN = 20;
@@ -68,27 +69,24 @@ export default function Ball({ translateTillY, translateTillX, colorHexCode = "#
             isVisible.value = 1
         },
         onActive: ({ translationX, translationY, x, y }, ctx) => {
-            console.log("Translate X value", x, y, translationX, translationY)
-            const { theta, radius } = canvas2Polar({ x, y }, { x: 0, y: 0 })
+            const { radius, theta } = canvas2Polar({ x: translationX, y: translationY }, { x: 0, y: 0 })
+            const R = radius;
+            const { x: X, y: Y } = polar2Canvas({ radius: clamp(R, 0, TRANSLATE_VALUE), theta }, { x: 0, y: 0 })
+            dragX.value = X;
+            dragY.value = Y;
 
-            angle.value = theta;
-            /*
-
-            */
-            xOffset.value = translationX;
-            yOffset.value = translationY
-            // dragX.value = clamp(translationX, -translateTillX, translateTillX);
-            // dragY.value = clamp(translationY, -translateTillY, translateTillY);
         },
         onEnd: ({ velocityX, velocityY }) => {
+            dragX.value = withTiming(0);
+            dragY.value = withTiming(0)
             // isVisible.value = withSpring(0.5, { velocity: velocityX > velocityY ? velocityX : velocityY });
             // isVisible.value = 0.3
-            xOffset.value = withSpring(0, {
-                velocity: velocityX,
-                //  overshootClamping: true,
-                // restSpeedThreshold: 100, restDisplacementThreshold: 100
-            });
-            yOffset.value = withSpring(0, { velocity: velocityY })
+            // xOffset.value = withSpring(0, {
+            //     velocity: velocityX,
+            //     //  overshootClamping: true,
+            //     // restSpeedThreshold: 100, restDisplacementThreshold: 100
+            // });
+            // yOffset.value = withSpring(0, { velocity: velocityY })
         }
     })
 

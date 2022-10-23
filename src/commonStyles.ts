@@ -13,6 +13,10 @@ const commonStyles = StyleSheet.create({
     },
     row: {
         flexDirection: "row"
+    },
+    rowAlignCenter: {
+        flexDirection: "row",
+        alignItems: "center"
     }
 });
 

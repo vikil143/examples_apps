@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Animated, {
+  Extrapolate,
   interpolate,
   useAnimatedStyle,
 } from "react-native-reanimated";
@@ -17,34 +18,20 @@ interface CardProps {
 
 export default function Card({ color, y, i }: CardProps) {
   const style = useAnimatedStyle(() => {
-    const inputRange = [0, i * 20];
-    const outputRange = [0, -((cardHeight - cardTitle) * i)];
-    // if (i < 0) {
-    //   inputRange.push(0);
-    //   outputRange.push(0);
-    // }
-    // inputRange.push(i * 20);
-    // outputRange.push(-(cardHeight - cardTitle) * i);
+    const inputRange = [-i + cardHeight, 0];
+    const outputRange = [-i + cardHeight, (i * 30)];
 
-    const translateY = interpolate(-Math.abs(y.value), inputRange, outputRange);
+    const translateY = interpolate(y.value, inputRange, outputRange, Extrapolate.CLAMP);
     return {
       transform: [{ translateY }],
     };
   });
 
-  let translateY: number;
-
-  if (i < 1) {
-    translateY = 0;
-  } else {
-    translateY = -((cardHeight - cardTitle) * i);
-  }
-
   return (
     <Animated.View
       key={i}
       // style={[{ transform: [{ translateY }] }]}
-      style={[style]}
+      style={[{ position: "absolute", width: "100%" }, style]}
     >
       <View style={[styles.card, { backgroundColor: color }]}></View>
     </Animated.View>

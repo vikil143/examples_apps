@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import commonStyles from '../../commonStyles'
 import Card, { CARD_HEIGHT_MARGIN } from './Card'
-import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated'
+import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated'
 import { PanGestureHandler, PanGestureHandlerGestureEvent } from 'react-native-gesture-handler'
 import { clamp } from '../../animation_helpers/animation';
 import { SCREEN_HEIGHT } from '../../constants'
@@ -18,8 +18,8 @@ export default function WalletAnimation() {
         onActive: ({ translationY }, ctx) => {
             y.value = clamp(translationY + ctx.y, - data.length * CARD_HEIGHT_MARGIN + SCREEN_HEIGHT, 0)
         },
-        onEnd: () => {
-
+        onEnd: ({ velocityY }) => {
+            // y.value = withSpring(clamp(y.value - 20, - data.length * CARD_HEIGHT_MARGIN + SCREEN_HEIGHT, 0), { velocity: velocityY })
         }
     })
 

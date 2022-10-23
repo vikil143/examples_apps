@@ -34,7 +34,7 @@ export default function Card({ y, index }: CardProp) {
         return {
             opacity,
             transform: [{ translateY: translateY.value }, { scale }]
-            // transform: [{ translateY: translateY.value }]
+            // transform: [{ translateY: y.value }]
         }
     })
     return (
