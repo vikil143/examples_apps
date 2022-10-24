@@ -5,6 +5,7 @@ export interface ViewStyle {
 }
 
 type NavigatonName =
+  "Home"
   | "AllScreens"
   | "MonzoCard"
   | "JoeAndJuice"
@@ -56,6 +57,7 @@ type NavigatonName =
   | "Naukri";
 
 type StackTypes = {
+  Home: undefined;
   AllScreens: undefined;
   MonzoCard: undefined;
   JoeAndJuice: undefined;

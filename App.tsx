@@ -83,6 +83,7 @@ import BrainTest from "./src/mycomp/braintest";
 import ProfileCutter from "./src/mycomp/profile_cutter";
 import Darkroom from "./src/season4/darkroom/Darkroom";
 import SkeltonAnim from "./src/mycomp/loading/SkeltonAnim";
+import MyWorkScreen from "./src/@my_work/Screen"
 
 const Stack = createStackNavigator<StackTypes>();
 
@@ -104,6 +105,7 @@ export default function App() {
         <StatusBar backgroundColor="#fff" barStyle="dark-content" />
         <NavigationContainer>
           <Stack.Navigator headerMode="none">
+            <Stack.Screen name="Home" component={MyWorkScreen} />
             <Stack.Screen name="AllScreens" component={AllScreens} />
             <Stack.Screen name="MonzoCard" component={MonzoCard} />
             <Stack.Screen name="JoeAndJuice" component={JoeAndJuice} />
